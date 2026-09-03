@@ -41,32 +41,37 @@ shared in substance with the Longhorn site. The file header documents the fields
 
 ## Assets
 
-The logo is the Alamo silhouette with a keyhole in the archway and a
-paw-and-crossbones flag, by `ythpstrmoby`.
-
-The only copy available was a 192x192 Redbubble sticker mockup
-(`assets/acl-original.png`) - complete with the white die-cut border and a grey
-product background, and no alpha channel. Rather than upscale that, the artwork
-was **traced to vector**: the mark is flat black, so thresholding by luminance
-isolates it cleanly from the white border and grey backdrop. A marching-squares
-contour trace at 6x supersampling, simplified with Ramer-Douglas-Peucker, gives
-16 closed loops and 346 points in about 4.9 KB.
+The logo is the Alamo silhouette with a keyhole archway and a paw-and-crossbones
+flag. The club's original artwork is kept in `assets/source/`:
 
 | File | What it is |
 |---|---|
-| `logo.svg` | the mark, `fill="currentColor"` - recolour by CSS |
-| `logo-white.svg` | white fill, for the dark hero and footer |
-| `favicon.svg` | the mark on a white rounded square |
+| `alamo-locksport-2.0.psd` | the layered Photoshop original, 1832x1800 |
+| `alamo-locksport-2.0.png` | 1832x1800, greyscale + alpha - the working master |
+| `alamo-locksport-2.0.jpg` | flattened JPEG of the same |
+| `alamo-locksport-1.0-no-flag.jpg` | the earlier version, before the flag was added |
+
+**Keep these.** They were nearly lost once: the artist has gone dormant and for a
+while the only copy anywhere public was a 192px Redbubble sticker mockup. This
+repo is now one of the places that original lives.
+
+The site's vectors are traced from `alamo-locksport-2.0.png`. Its alpha channel
+is an exact mask, so a marching-squares contour trace at ~1200px, simplified with
+Ramer-Douglas-Peucker, reproduces the artwork faithfully - wordmark included.
+
+| File | Where it is used |
+|---|---|
+| `logo-mark.svg` / `logo-mark-white.svg` | emblem only, no wordmark - the hero |
+| `logo.svg` / `logo-white.svg` | full lockup with wordmark - the footer |
+| `favicon.svg` | emblem on a white rounded square |
 | `apple-touch-icon.png` | 180x180 raster of `favicon.svg` |
-| `acl-original.png` | the source mockup, kept for provenance |
 
-The wordmark is **not** part of the vector. It was too small to trace cleanly at
-192px, and the page already sets the club name in Oswald as real text - which is
-sharper, selectable, and readable by screen readers.
+The hero deliberately uses the emblem *without* the wordmark, because the page
+already sets the club name in Oswald as real text - sharper, selectable, and
+readable by screen readers. The footer uses the full lockup.
 
-Being vector, this no longer has a resolution ceiling: it is crisp at any size.
-If the true original artwork ever surfaces, it is still worth swapping in, since
-this trace is faithful to a small mockup rather than to the artist's file.
+`logo.svg` and `logo-mark.svg` use `fill="currentColor"`, so they take their
+colour from CSS; the `-white` variants are for the dark hero and footer.
 
 ## Venues
 
