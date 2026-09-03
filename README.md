@@ -41,16 +41,32 @@ shared in substance with the Longhorn site. The file header documents the fields
 
 ## Assets
 
-- `assets/logo.jpg` — the Alamo/ACL mark, from the @aclocksport_tx Instagram
-  avatar. **150×150 is the largest copy available publicly**, so the footer logo
-  and favicon are soft. Replace this file if a high-resolution or vector original
-  turns up, then regenerate the icon:
+The logo is the Alamo silhouette with a keyhole in the archway and a
+paw-and-crossbones flag, by `ythpstrmoby`.
 
-```
-sips -s format png -Z 180 assets/logo.jpg --out assets/apple-touch-icon.png
-```
+The only copy available was a 192x192 Redbubble sticker mockup
+(`assets/acl-original.png`) - complete with the white die-cut border and a grey
+product background, and no alpha channel. Rather than upscale that, the artwork
+was **traced to vector**: the mark is flat black, so thresholding by luminance
+isolates it cleanly from the white border and grey backdrop. A marching-squares
+contour trace at 6x supersampling, simplified with Ramer-Douglas-Peucker, gives
+16 closed loops and 346 points in about 4.9 KB.
 
-Brand colours are sampled from the logo: red `#C1272D`, blue `#3E7FA6`.
+| File | What it is |
+|---|---|
+| `logo.svg` | the mark, `fill="currentColor"` - recolour by CSS |
+| `logo-white.svg` | white fill, for the dark hero and footer |
+| `favicon.svg` | the mark on a white rounded square |
+| `apple-touch-icon.png` | 180x180 raster of `favicon.svg` |
+| `acl-original.png` | the source mockup, kept for provenance |
+
+The wordmark is **not** part of the vector. It was too small to trace cleanly at
+192px, and the page already sets the club name in Oswald as real text - which is
+sharper, selectable, and readable by screen readers.
+
+Being vector, this no longer has a resolution ceiling: it is crisp at any size.
+If the true original artwork ever surfaces, it is still worth swapping in, since
+this trace is faithful to a small mockup rather than to the artist's file.
 
 ## Venues
 
