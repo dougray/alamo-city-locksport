@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alamo City Locksport &mdash; San Antonio, Texas</title>
+<meta name="description" content="San Antonio's locksport group and TOOOL affiliate. Monthly meetups plus Wednesday sessions. All ages welcome, picks provided, no experience needed.">
+<meta name="theme-color" content="#16191F">
+
+<link rel="icon" href="assets/apple-touch-icon.png" sizes="180x180">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Alamo City Locksport">
+<meta property="og:description" content="San Antonio locksport. Monthly meetups plus Wednesday sessions. All ages, picks provided.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Alamo City Locksport",
+  "description": "San Antonio locksport group and TOOOL affiliate. Monthly meetups plus recurring Wednesday sessions.",
+  "location": {
+    "@type": "Place",
+    "name": "Flying Saucer Draught Emporium",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "11255 Huebner Rd",
+      "addressLocality": "San Antonio",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    }
+  },
+  "sameAs": [
+    "https://www.meetup.com/alamocitylocksport/",
+    "https://www.instagram.com/aclocksport_tx/",
+    "https://www.instagram.com/alamocitylocksport/"
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --ink:        #16191F;
+    --ink-2:      #212630;
+    --red:        #C1272D;
+    --red-lt:     #E0555A;
+    --blue:       #3E7FA6;
+    --blue-lt:    #8BCCE8;
+    --paper:      #f7f4ef;
+    --paper-2:    #ffffff;
+    --body:       #2f3033;
+    --muted:      #63666b;
+    --rule:       #e0dad0;
+    --display:    'Oswald', 'Helvetica Neue', Impact, sans-serif;
+    --sans:       -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--body);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 { margin: 0; line-height: 1.1; font-family: var(--display); font-weight: 600; }
+  a { color: #A81F24; }
+  a:focus-visible, .btn:focus-visible { outline: 3px solid var(--blue-lt); outline-offset: 3px; }
+
+  .wrap { width: 100%; max-width: 64rem; margin: 0 auto; padding: 0 1.5rem; }
+
+  .skip { position: absolute; left: -9999px; background: #fff; padding: .75rem 1rem; z-index: 9; }
+  .skip:focus { left: 1rem; top: 1rem; }
+
+  /* ---------- hero ---------- */
+  .hero {
+    background: var(--ink);
+    background-image:
+      radial-gradient(circle at 88% 12%, rgba(139,204,232,.30), transparent 48%),
+      radial-gradient(circle at 8% 88%, rgba(193,39,45,.34), transparent 52%),
+      linear-gradient(180deg, #2A303B 0%, var(--ink) 100%);
+    color: #fff;
+    padding: 4.5rem 0 4rem;
+    border-bottom: 5px solid var(--red);
+  }
+  .hero-logo {
+    display: block;
+    width: clamp(5rem, 11vw, 6.5rem);
+    height: auto;
+    background: #fff;
+    border-radius: 14px;
+    padding: .3rem .45rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 14px rgba(0,0,0,.28);
+  }
+  .hero .eyebrow {
+    font-family: var(--display);
+    letter-spacing: .26em;
+    text-transform: uppercase;
+    font-size: .8rem;
+    color: var(--blue-lt);
+    margin: 0 0 1rem;
+  }
+  .hero h1 {
+    font-size: clamp(2.4rem, 8vw, 4.6rem);
+    text-transform: uppercase;
+    letter-spacing: .01em;
+    margin-bottom: 1.2rem;
+    max-width: 18ch;
+  }
+  .hero .tagline {
+    font-size: clamp(1.05rem, 2.4vw, 1.28rem);
+    color: #cfd1d6;
+    max-width: 44ch;
+    margin: 0 0 2rem;
+  }
+  .when-strip {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: .5rem 1rem;
+    border-left: 3px solid var(--red);
+    padding: .35rem 0 .35rem 1rem;
+    margin-bottom: 2.2rem;
+    font-family: var(--display);
+    font-size: 1.22rem;
+    letter-spacing: .02em;
+    color: #fff;
+  }
+  .when-strip span { color: #a9acb2; font-family: var(--sans); font-size: .95rem; }
+
+  .btns { display: flex; flex-wrap: wrap; gap: .8rem; }
+  .btn {
+    display: inline-block;
+    padding: .85rem 1.7rem;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: .95rem;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-family: var(--display);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    transition: background-color .15s ease, color .15s ease;
+  }
+  .btn-solid { background: var(--red); color: #fff; border-color: var(--red); }
+  .btn-solid:hover { background: #d96a12; }
+  .btn-ghost { color: #fff; border-color: rgba(255,255,255,.45); }
+  .btn-ghost:hover { background: rgba(255,255,255,.1); }
+
+  /* ---------- stats ---------- */
+  .stats {
+    background: var(--ink-2);
+    color: #fff;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 1px;
+    text-align: center;
+  }
+  .stats div { padding: 1.7rem 1rem; background: var(--ink-2); }
+  .stats .n {
+    display: block;
+    font-family: var(--display);
+    font-size: 2.1rem;
+    color: var(--blue-lt);
+    line-height: 1;
+  }
+  .stats .l {
+    display: block;
+    font-size: .76rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: #9a9da3;
+    margin-top: .5rem;
+  }
+
+  /* ---------- sections ---------- */
+  section { padding: 3.6rem 0; }
+  section + section { border-top: 1px solid var(--rule); }
+
+  .section-title {
+    font-size: 1.9rem;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    color: var(--ink);
+    margin-bottom: 1.4rem;
+  }
+  .section-title::after {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 4px;
+    background: var(--red);
+    margin-top: .75rem;
+  }
+  p { margin: 0 0 1rem; max-width: 44rem; }
+  p:last-child { margin-bottom: 0; }
+  .lede { font-size: 1.14rem; }
+
+  .cards { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); }
+  .card {
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--red);
+    border-radius: 4px;
+    padding: 1.5rem;
+  }
+  .card h3 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: var(--ink);
+    margin-bottom: .6rem;
+  }
+  .card p { font-size: .95rem; color: var(--muted); }
+  .card .big { display: block; font-family: var(--display); font-size: 1.6rem; color: var(--red); margin-bottom: .3rem; }
+
+  /* ---------- rules ---------- */
+  .rules { list-style: none; margin: 0; padding: 0; max-width: 44rem; counter-reset: r; }
+  .rules li {
+    counter-increment: r;
+    position: relative;
+    padding: 0 0 1rem 3rem;
+  }
+  .rules li::before {
+    content: counter(r);
+    position: absolute;
+    left: 0; top: .1rem;
+    width: 2rem; height: 2rem;
+    display: grid; place-items: center;
+    background: var(--ink);
+    color: var(--blue-lt);
+    font-family: var(--display);
+    border-radius: 3px;
+    font-size: .95rem;
+  }
+
+  .map-grid {
+    display: grid; gap: 1.25rem; margin-top: 1.75rem;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  }
+  .map-grid .map-frame { margin-top: .4rem; }
+  .map-grid iframe { height: clamp(13rem, 26vw, 17rem); }
+  .map-cap {
+    font-size: .78rem; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--muted); margin: 0;
+  }
+
+  /* ---------- map ---------- */
+  .map-frame {
+    margin-top: 1.75rem;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    overflow: hidden;
+    background: #e8e4da;
+    line-height: 0;
+  }
+  .map-frame iframe { display: block; width: 100%; height: clamp(18rem, 45vw, 25rem); border: 0; }
+  .map-note { font-size: .85rem; color: var(--muted); margin-top: .7rem; }
+  address { font-style: normal; }
+
+  /* ---------- calendar ---------- */
+  .cal-grid { display: grid; gap: 2.25rem; grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr)); }
+  .cal-col h3 {
+    font-size: 1rem; text-transform: uppercase; letter-spacing: .12em;
+    color: var(--muted); padding-bottom: .7rem; margin-bottom: .3rem;
+    border-bottom: 2px solid var(--rule);
+  }
+  .cal-list { list-style: none; margin: 0; padding: 0; }
+  .cal-list li { display: flex; gap: 1rem; padding: .95rem 0; border-bottom: 1px solid var(--rule); }
+  .cal-list li:last-child { border-bottom: 0; }
+  .cal-date {
+    flex: 0 0 3.4rem; text-align: center; padding-top: .15rem;
+    border-right: 2px solid var(--red); margin-right: .1rem;
+  }
+  .cal-date .m {
+    display: block; font-family: var(--display); font-size: .72rem;
+    letter-spacing: .12em; text-transform: uppercase; color: var(--red);
+  }
+  .cal-date .d { display: block; font-family: var(--display); font-size: 1.55rem; color: var(--ink); line-height: 1.1; }
+  .cal-date .y { display: block; font-size: .66rem; color: var(--muted); }
+  .cal-date.tba .m { font-size: .82rem; padding-top: .15rem; color: var(--muted); }
+  .cal-body { min-width: 0; }
+  .cal-body .t { font-weight: 600; color: var(--ink); }
+  .cal-body .t a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--red); }
+  .cal-body .t a:hover { color: var(--red); }
+  .cal-body .meta { font-size: .86rem; color: var(--muted); margin-top: .15rem; }
+  .cal-body .note { font-size: .84rem; color: var(--muted); margin-top: .3rem; font-style: italic; }
+  .cal-empty { color: var(--muted); font-size: .92rem; padding: 1rem 0; }
+  .cal-foot { margin-top: 1.1rem; font-size: .85rem; color: var(--muted); }
+  .cal-sub { font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted);
+             margin: 1.4rem 0 .2rem; padding-top: .9rem; border-top: 1px dashed var(--rule); }
+
+  /* ---------- socials ---------- */
+  .socials { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .8rem; }
+  .social-btn {
+    display: inline-flex; align-items: center; gap: .65rem;
+    padding: .8rem 1.4rem .8rem 1.1rem;
+    background: var(--paper-2);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    text-decoration: none;
+    color: var(--ink);
+    font-weight: 600;
+    transition: border-color .15s ease;
+  }
+  .social-btn:hover { border-color: var(--red); }
+  .social-btn svg { width: 22px; height: 22px; flex: none; fill: var(--red); }
+  .social-btn .sub { display: block; font-weight: 400; font-size: .78rem; color: var(--muted); }
+
+  /* ---------- footer ---------- */
+  footer { background: var(--ink); color: #a9acb2; padding: 2.6rem 0; font-size: .9rem; }
+  footer a { color: var(--blue-lt); }
+  footer p { margin: 0 0 .5rem; max-width: none; }
+  footer .fine { color: #7c8087; font-size: .82rem; margin-top: 1rem; }
+  .footer-logo {
+    display: block;
+    width: 92px; height: auto;
+    background: #fff;
+    border-radius: 6px;
+    padding: 6px;
+    margin-bottom: 1.1rem;
+  }
+  footer .credit {
+    margin-top: 1.5rem; padding-top: 1.1rem;
+    border-top: 1px solid rgba(255,255,255,.12);
+    color: #7c8087; font-size: .8rem;
+  }
+  footer .credit a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+  footer .credit a:hover { color: var(--blue-lt); }
+
+  @media (max-width: 30rem) { .btns .btn { flex: 1 1 100%; text-align: center; } }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="hero-logo" src="assets/apple-touch-icon.png"
+         alt="" width="180" height="180" aria-hidden="true">
+    <p class="eyebrow">San Antonio, Texas &middot; TOOOL Affiliate</p>
+    <h1>Alamo City Locksport</h1>
+    <p class="tagline">A loose group of lockpickers, locksporters and locksmiths in San Antonio, sharing ethical locksport with anyone who is interested.</p>
+    <p class="when-strip">Monthly meetups &amp; Wednesday sessions <span>Two ways to join in</span></p>
+    <div class="btns">
+      <a class="btn btn-solid" href="https://www.meetup.com/alamocitylocksport/">Next meetup</a>
+      <a class="btn btn-ghost" href="#visit">How to find us</a>
+    </div>
+  </div>
+</header>
+
+<div class="stats">
+  <div><span class="n">400+</span><span class="l">Members</span></div>
+  <div><span class="n">95+</span><span class="l">Meetups held</span></div>
+  <div><span class="n">4.7&#9733;</span><span class="l">On Meetup</span></div>
+  <div><span class="n">TOOOL</span><span class="l">Affiliate</span></div>
+</div>
+
+<main id="main">
+
+  <section id="about">
+    <div class="wrap">
+      <h2 class="section-title">Who We Are</h2>
+      <p class="lede">Alamo City Locksport is a loose group of lockpickers, locksporters and locksmiths in San Antonio. We are a TOOOL affiliate, and we gather to share ethical locksport with anyone who is interested.</p>
+      <p>We want to bring together anyone curious about the basic ways we secure ourselves &mdash; and about identifying and exploiting the weaknesses in them. Understanding how a lock fails is how you learn to protect yourself and the people around you.</p>
+      <p>All ages are welcome and encouraged. We gather for the sport and the science of it, and everyone has something to learn regardless of age or experience.</p>
+    </div>
+  </section>
+
+  <section id="first-time">
+    <div class="wrap">
+      <h2 class="section-title">First Time?</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>We provide the picks</h3>
+          <p>There is a set of shared tools for new learners, and people are happy to show off their own. Beginner pick kits and cases are available to buy if you want to keep practising at home.</p>
+        </div>
+        <div class="card">
+          <h3>All ages welcome</h3>
+          <p>Age, experience and background are beside the point &mdash; we are here for the sport. (Texas law still applies: only 21+ may drink. Caffeine is an option depending on the venue.)</p>
+        </div>
+        <div class="card">
+          <h3>Bring a lock</h3>
+          <p>Got an old lock you want to see opened? Bring it and we will help you defeat it. Only ones you no longer depend on, though &mdash; picking wears a lock out over time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit">
+    <div class="wrap">
+      <h2 class="section-title">Two Ways In</h2>
+      <p class="lede">We run two different gatherings. Both are open, both are chances to learn something and to share the love of locksport with other enthusiasts &mdash; come to either, or both.</p>
+
+      <div class="cards" style="margin-top:1.75rem">
+        <div class="card">
+          <h3>Monthly meetup</h3>
+          <span class="big">Flying Saucer</span>
+          <p><strong>11255 Huebner Rd, San Antonio</strong><br>
+             Our main gathering. Puzzles, a brew, and a table full of locks. People bring bypass tools, dimple picks, the odd Flipper Zero &mdash; whatever they are playing with.</p>
+          <p style="margin-top:.7rem"><a href="https://www.google.com/maps/search/?api=1&amp;query=Flying+Saucer+11255+Huebner+Rd+San+Antonio+TX">Directions &rarr;</a></p>
+        </div>
+        <div class="card">
+          <h3>Labyrinths &amp; Locksport</h3>
+          <span class="big">Court of Gamers</span>
+          <p><strong>2824 Thousand Oaks Dr, San Antonio</strong><br>
+             A smaller, regular session on Wednesday evenings in a game shop. Good if you want a quieter room and more time at the bench.</p>
+          <p style="margin-top:.7rem"><a href="https://www.google.com/maps/search/?api=1&amp;query=Court+of+Gamers+2824+Thousand+Oaks+Dr+San+Antonio+TX+78232">Directions &rarr;</a></p>
+        </div>
+      </div>
+
+      <div class="map-grid">
+        <div>
+          <p class="map-cap">Flying Saucer &mdash; Huebner Rd</p>
+          <div class="map-frame">
+            <iframe title="Map showing Flying Saucer at 11255 Huebner Road, San Antonio"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-98.5857%2C29.5426%2C-98.5697%2C29.5506&amp;layer=mapnik&amp;marker=29.5466%2C-98.5777"></iframe>
+          </div>
+        </div>
+        <div>
+          <p class="map-cap">Court of Gamers &mdash; Thousand Oaks Dr</p>
+          <div class="map-frame">
+            <iframe title="Map showing Court of Gamers at 2824 Thousand Oaks Drive, San Antonio"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-98.4507%2C29.5748%2C-98.4347%2C29.5828&amp;layer=mapnik&amp;marker=29.5787767%2C-98.4426711"></iframe>
+          </div>
+        </div>
+      </div>
+      <p class="map-note">Map data &copy; OpenStreetMap contributors. Dates and venues are posted on <a href="https://www.meetup.com/alamocitylocksport/">Meetup</a> &mdash; check there before setting out.</p>
+    </div>
+  </section>
+
+  <section id="calendar">
+    <div class="wrap">
+      <h2 class="section-title">Calendar</h2>
+      <div class="cal-grid">
+        <div class="cal-col">
+          <h3>Club meetings</h3>
+          <ul class="cal-list" id="cal-meetings"><li class="cal-empty">Loading&hellip;</li></ul>
+          <p class="cal-foot">Pulled from Meetup automatically. <a href="https://www.meetup.com/alamocitylocksport/">See all dates &amp; RSVP</a></p>
+        </div>
+        <div class="cal-col">
+          <h3>Texas security conferences</h3>
+          <ul class="cal-list" id="cal-cons"><li class="cal-empty">Loading&hellip;</li></ul>
+          <p class="cal-foot">Cons around San Antonio, Austin, Houston and DFW. Spot something missing? Tell us on Meetup or Instagram.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rules">
+    <div class="wrap">
+      <h2 class="section-title">The Rules</h2>
+      <p>Locksport runs on a simple ethic, and we hold to it without exception.</p>
+      <ol class="rules">
+        <li><strong>Pick only locks you own,</strong> or locks whose owner has given you permission to pick.</li>
+        <li><strong>Never pick a lock that is in use.</strong> If something depends on that lock right now, it is not a practice lock.</li>
+        <li><strong>Do not pick to gain entry.</strong> The point is the puzzle, not what is behind the door.</li>
+      </ol>
+      <p style="margin-top:1.25rem">Anyone who is not on board with that will be asked to leave. It is the reason a group like this can meet openly, in public, in a bar and a game shop.</p>
+    </div>
+  </section>
+
+  <section id="connect">
+    <div class="wrap">
+      <h2 class="section-title">Find Us</h2>
+      <p>Meetup is where the dates go up &mdash; start there. We run two Instagram accounts, and both are worth a follow.</p>
+      <p><strong>Questions? Message us on any of these.</strong> We do not run a club email address.</p>
+      <ul class="socials">
+        <li>
+          <a class="social-btn" href="https://www.meetup.com/alamocitylocksport/">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 2v2H5.5A2.5 2.5 0 0 0 3 6.5v13A2.5 2.5 0 0 0 5.5 22h13a2.5 2.5 0 0 0 2.5-2.5v-13A2.5 2.5 0 0 0 18.5 4H17V2h-2v2H9V2H7zm-2 8h14v9.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V10zm2.5 2a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5zm4.5 0a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5zm4.5 0a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5z"/></svg>
+            <span>Meetup<span class="sub">meetup.com/AlamoCityLocksport</span></span>
+          </a>
+        </li>
+        <li>
+          <a class="social-btn" href="https://www.instagram.com/aclocksport_tx/">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 5.18a4.66 4.66 0 1 0 0 9.32 4.66 4.66 0 0 0 0-9.32zm0 7.69a3.03 3.03 0 1 1 0-6.06 3.03 3.03 0 0 1 0 6.06zm5.94-7.87a1.09 1.09 0 1 1-2.18 0 1.09 1.09 0 0 1 2.18 0z"/></svg>
+            <span>Instagram<span class="sub">@aclocksport_tx</span></span>
+          </a>
+        </li>
+        <li>
+          <a class="social-btn" href="https://www.instagram.com/alamocitylocksport/">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 5.18a4.66 4.66 0 1 0 0 9.32 4.66 4.66 0 0 0 0-9.32zm0 7.69a3.03 3.03 0 1 1 0-6.06 3.03 3.03 0 0 1 0 6.06zm5.94-7.87a1.09 1.09 0 1 1-2.18 0 1.09 1.09 0 0 1 2.18 0z"/></svg>
+            <span>Instagram<span class="sub">@alamocitylocksport</span></span>
+          </a>
+        </li>
+        <li>
+          <a class="social-btn" href="https://twitter.com/Alamo_Locksport">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.65l-5.22-6.82-5.96 6.82H1.68l7.73-8.84L1.25 2.25h6.82l4.71 6.23zm-1.16 17.52h1.83L7.08 4.13H5.11z"/></svg>
+            <span>X<span class="sub">@Alamo_Locksport</span></span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <img class="footer-logo" src="assets/logo.jpg"
+         alt="Alamo City Locksport" width="150" height="150" loading="lazy">
+    <p><strong>Alamo City Locksport</strong> &mdash; San Antonio, Texas</p>
+    <p>A <a href="https://toool.us/">TOOOL</a> affiliate, picking locks in San Antonio.</p>
+    <p class="fine">Flying Saucer, 11255 Huebner Rd &middot; Court of Gamers, 2824 Thousand Oaks Dr</p>
+    <p class="credit">Built by <a href="https://websmithtx.com">Websmith</a></p>
+  </div>
+</footer>
+
+<script src="data/meetings.js"></script>
+<script src="data/conferences.js"></script>
+<script>
+(function () {
+  var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var DAYS = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+
+  // Compare on date alone so an event stays listed for the whole day it runs.
+  function startOfToday() { var n = new Date(); return new Date(n.getFullYear(), n.getMonth(), n.getDate()); }
+
+  function parseLocal(str) {
+    // "2026-09-05T19:00:00" or "2026-09-05" -- parsed as LOCAL time, not UTC.
+    var m = /^(\d{4})-(\d{2})-(\d{2})(?:T(\d{2}):(\d{2}))?/.exec(str || '');
+    if (!m) return null;
+    return new Date(+m[1], +m[2] - 1, +m[3], +(m[4] || 0), +(m[5] || 0));
+  }
+
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+
+  function dateCell(d) {
+    var box = el('div', 'cal-date');
+    box.appendChild(el('span', 'm', MONTHS[d.getMonth()]));
+    box.appendChild(el('span', 'd', String(d.getDate())));
+    box.appendChild(el('span', 'y', String(d.getFullYear())));
+    return box;
+  }
+
+  function tbaCell(text) {
+    var box = el('div', 'cal-date tba');
+    box.appendChild(el('span', 'm', text || 'TBA'));
+    return box;
+  }
+
+  function titleNode(title, url) {
+    var t = el('div', 't');
+    if (url) {
+      var a = el('a', null, title);
+      a.href = url;
+      t.appendChild(a);
+    } else {
+      t.textContent = title;
+    }
+    return t;
+  }
+
+  function row(dateNode, title, url, meta, note) {
+    var li = document.createElement('li');
+    li.appendChild(dateNode);
+    var body = el('div', 'cal-body');
+    body.appendChild(titleNode(title, url));
+    if (meta) body.appendChild(el('div', 'meta', meta));
+    if (note) body.appendChild(el('div', 'note', note));
+    li.appendChild(body);
+    return li;
+  }
+
+  function timeLabel(d) {
+    var h = d.getHours(), ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+    var mm = d.getMinutes();
+    return h + (mm ? ':' + (mm < 10 ? '0' : '') + mm : ':00') + ' ' + ampm;
+  }
+
+  function spanLabel(a, b) {
+    if (!b) return DAYS[a.getDay()] + ', ' + MONTHS[a.getMonth()] + ' ' + a.getDate();
+    if (a.getMonth() === b.getMonth()) {
+      return MONTHS[a.getMonth()] + ' ' + a.getDate() + '\u2013' + b.getDate();
+    }
+    return MONTHS[a.getMonth()] + ' ' + a.getDate() + ' \u2013 ' + MONTHS[b.getMonth()] + ' ' + b.getDate();
+  }
+
+  function render(id, rows, emptyMsg) {
+    var ul = document.getElementById(id);
+    if (!ul) return;
+    ul.textContent = '';
+    if (!rows.length) { ul.appendChild(el('li', 'cal-empty', emptyMsg)); return; }
+    rows.forEach(function (r) { ul.appendChild(r); });
+  }
+
+  var today = startOfToday();
+
+  // ---- club meetings ----
+  var meetings = (window.CLUB_MEETINGS || [])
+    .map(function (m) {
+      // Feed titles read "September Meetup for Alamo City Locksport" -- the
+      // club name is redundant on the club's own page, so trim it off.
+      var t = (m.title || 'Meetup')
+        .replace(/\s*(for|with|-|\u2013|\u2014)?\s*Alamo City Locksport\s*$/i, '')
+        .trim();
+      return { d: parseLocal(m.start), url: m.url, title: t || 'Meetup' };
+    })
+    .filter(function (m) { return m.d && m.d >= today; })
+    .sort(function (a, b) { return a.d - b.d; })
+    .slice(0, 6)
+    .map(function (m) {
+      return row(dateCell(m.d), m.title, m.url,
+                 DAYS[m.d.getDay()] + ' \u00b7 ' + timeLabel(m.d));
+    });
+
+  render('cal-meetings', meetings,
+         'No dates posted right now \u2014 check Meetup.');
+
+  // ---- conferences ----
+  var cons = window.CLUB_CONFERENCES || [];
+  var dated = [], undated = [];
+
+  cons.forEach(function (c) {
+    var start = parseLocal(c.start);
+    var end = parseLocal(c.end);
+    if (start) {
+      if ((end || start) >= today) dated.push({ c: c, start: start, end: end });
+    } else {
+      undated.push(c);
+    }
+  });
+
+  dated.sort(function (a, b) { return a.start - b.start; });
+
+  var conRows = dated.map(function (x) {
+    var meta = spanLabel(x.start, x.end);
+    if (x.c.where) meta += ' \u00b7 ' + x.c.where;
+    return row(dateCell(x.start), x.c.title, x.c.url, meta, x.c.note);
+  });
+
+  if (undated.length) {
+    var head = document.createElement('li');
+    head.style.display = 'block';
+    head.style.borderBottom = '0';
+    head.style.padding = '0';
+    head.appendChild(el('div', 'cal-sub', 'Dates not yet announced'));
+    conRows.push(head);
+    undated.forEach(function (c) {
+      var meta = c.when || 'Date to be announced';
+      if (c.where) meta += ' \u00b7 ' + c.where;
+      conRows.push(row(tbaCell('TBA'), c.title, c.url, meta, c.note));
+    });
+  }
+
+  render('cal-cons', conRows, 'Nothing listed yet.');
+})();
+</script>
+
+</body>
+</html>
