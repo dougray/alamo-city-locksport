@@ -1,0 +1,33 @@
+name: Update meeting dates
+
+# Refreshes data/meetings.js from the club's Meetup iCal feed.
+# Commits only when the dates actually change, so the history stays quiet.
+
+on:
+  schedule:
+    - cron: "17 9 * * *"   # daily, 09:17 UTC (~04:17 Austin)
+  workflow_dispatch:        # lets you run it by hand from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch the Meetup feed
+        run: python3 scripts/update_meetings.py
+
+      - name: Commit if the dates changed
+        run: |
+          if git diff --quiet -- data/meetings.js; then
+            echo "No change to meeting dates."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/meetings.js
+          git commit -m "Update meeting dates from Meetup"
+          git push
