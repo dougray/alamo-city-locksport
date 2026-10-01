@@ -1,6 +1,6 @@
 // Generated from the Meetup iCal feed. Do not edit by hand --
 // scripts/update_meetings.py overwrites this file.
-// Last updated: 2026-09-30T15:54:31Z
+// Last updated: 2026-10-01T16:26:12Z
 window.CLUB_MEETINGS = [
   {
     "start": "2026-10-03T19:00:00",
