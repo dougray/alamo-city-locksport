@@ -1,0 +1,66 @@
+# Build checks for small sites and script repos. Each step runs only when
+# the repo has that kind of file, so the same file works everywhere:
+#   HTML    every local link and #anchor resolves; markup lints clean
+#   Python  no syntax errors or undefined names; tests pass if there are any
+#   Shell   shellcheck
+name: Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  LYCHEE_VERSION: "0.24.2"
+  LYCHEE_SHA256: "1f4e0ef7f6554a6ed33dd7ac144fb2e1bbed98598e7af973042fc5cd43951c9a"
+  RUFF_VERSION: "0.17.4"
+  HTMLHINT_VERSION: "1.9.2"
+
+jobs:
+  checks:
+    name: Lint and test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: HTML links (offline)
+        if: hashFiles('**/*.html') != ''
+        run: |
+          curl -fsSL -o lychee.tgz "https://github.com/lycheeverse/lychee/releases/download/lychee-v${LYCHEE_VERSION}/lychee-x86_64-unknown-linux-gnu.tar.gz"
+          echo "${LYCHEE_SHA256}  lychee.tgz" | sha256sum -c -
+          tar -xzf lychee.tgz --strip-components=1 lychee-x86_64-unknown-linux-gnu/lychee && rm lychee.tgz
+          # --offline: files and anchors in this repo only, so a slow third
+          # party never fails the build.
+          git ls-files -z '*.html' | xargs -0 ./lychee --offline --include-fragments --no-progress
+      - name: HTML markup
+        if: hashFiles('**/*.html') != ''
+        run: git ls-files -z '*.html' | xargs -0 npx --yes "htmlhint@${HTMLHINT_VERSION}"
+
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        if: hashFiles('**/*.py') != ''
+        with:
+          python-version: "3.13"
+      - name: Python
+        if: hashFiles('**/*.py') != ''
+        run: |
+          python -m pip install --quiet "ruff==${RUFF_VERSION}"
+          # Errors that break at runtime: syntax, undefined names, bad comparisons.
+          ruff check --select E9,F63,F7,F82 --output-format github .
+          git ls-files -z '*.py' | xargs -0 python -m compileall -q
+          if git ls-files | grep -q -E '(^|/)(test_[^/]*|[^/]*_test)\.py$'; then
+            git ls-files -z "*requirements*.txt" | xargs -0 -r -n1 python -m pip install --quiet -r
+            python -m pip install --quiet pytest
+            python -m pytest -q
+          fi
+
+      - name: Shell
+        if: hashFiles('**/*.sh') != ''
+        run: git ls-files -z '*.sh' | xargs -0 shellcheck
