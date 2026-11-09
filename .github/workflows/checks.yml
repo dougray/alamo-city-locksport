@@ -39,7 +39,7 @@ jobs:
           tar -xzf lychee.tgz --strip-components=1 lychee-x86_64-unknown-linux-gnu/lychee && rm lychee.tgz
           # --offline: files and anchors in this repo only, so a slow third
           # party never fails the build.
-          git ls-files -z '*.html' | xargs -0 ./lychee --offline --include-fragments --no-progress
+          git ls-files -z '*.html' | xargs -0 ./lychee --offline --include-fragments --index-files index.html --no-progress
       - name: HTML markup
         if: hashFiles('**/*.html') != ''
         run: git ls-files -z '*.html' | xargs -0 npx --yes "htmlhint@${HTMLHINT_VERSION}"
